@@ -1,0 +1,40 @@
+JavaScript Lessons
+
+variables
+functions
+loops
+operators:
+	=== instead of ==
+	!= or !==
+scope
+types
+no main() --> compare to C++
+arrays
+
+NOTE:
+* follow airbnb's JS syntax guide (they use es6)
+* teach all the stuff that hangman game only needs
+
+------------------------------------------------------
+Links:
+Hangman: https://codepen.io/offline_blogger/pen/Kedtr
+
+Tips while teaching:
+* pause in between and check if works
+
+------------------------------------------------------
+- 1d & 2d arrays
+	- inserting elements into arrays
+- for loops
+	- length of array
+- if else
+- console.log
+- math.floor
+- math.random
+- function fn(){} vs. let checkLetter = fn(){}
+	- calling functions
+- document.getElementById
+- document.createTextNode
+- appendChild
+
+
