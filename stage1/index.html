@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"  />
+	<meta name="viewport" content="width=device-width">
+	<title>Hangman</title>
+	<link rel="stylesheet" type="text/css" href="style.css"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script type="text/javascript" src="play1.js"></script>
+</head>
+
+<body>
+	<h1>Hangman <br>Your favorite classroom pastime returns!</h1>
+	<p id="guess_space"></p>
+	
+	<form name="guess_form">
+		<input name="input_letter" type="text" size="5" maxlength="1">
+		<input name="ratebutton" type="button" value="Guess" onClick="checkLetter()">
+		<p id="wrong_letters">Wrong Letters:</p>
+		<img src="http://www.writteninpencil.de/Projekte/Hangman/hangman0.png" id="hangman"><br />
+		<input name="refresh" type="button" value="New Game" onClick="location.reload()">
+	</form>
+</body>
+</html>
