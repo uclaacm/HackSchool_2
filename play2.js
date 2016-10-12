@@ -1,6 +1,3 @@
-/*
-	Final solution to the Hangman game
-*/
 const dictionary = [
 ["T", "R", "E", "E", "H", "O", "U", "S", "E"],
   ["J","A","V","A","S","C","R","I","P","T"],
@@ -33,6 +30,32 @@ function printspaces(){
 		guess_space.appendChild(text_node);			// append text node to element in HTML
 	}
 }
+
+
+/*
+	check letter if guessed correctly
+*/
+let checkletter = function() {
+	let f = document.guess_form;		// form from HTML
+	let b = f.elements["input_letter"];	// the "input_letter" element from the form
+	let letter = b.value; 				// the letter provided by the user into "input_letter" element
+	letter = letter.toUpperCase();		// turn letter to uppercase
+
+	// here, we check if the user's guessed letter is a letter in the word (chosen)
+	// TO DO for loop through chosen
+	for () {
+		// if a character matches with the guessed letter
+		// replace all matching blanks with the letter
+	}
+
+	for (let i = 0; i < chosen.length; i++){
+		if(chosen[i] === letter){
+			spaces[i] = letter + " ";	// replace spaces[i] with the letter found
+		}
+	}
+}
+
+
 
 // checks if the the letter provided by the user matches one or more of the letters in the word
 let checkLetter = function(){
@@ -82,10 +105,3 @@ let checkLetter = function(){
 		window.alert("Uh...I guess you're dead now.");
 	}
 }
-
-function init(){
-	printspaces();
-}
-// when window loads, run function init()
-window.onload = init;
-
