@@ -47,8 +47,8 @@ let checkLetter = function(){
 			found = true;
 			spaces[i] = letter + " ";	// replace spaces[i] with the letter found
 		}
-	b.value = "";		// empty out text input box for next round
 	}
+	b.value = "";		// empty out text input box for next round
 	
 	// deletes the guessfield and replaces it with the new one
 	let guess_space = document.getElementById("guess_space");

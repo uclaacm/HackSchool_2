@@ -1,7 +1,6 @@
 /*
-	Checkpoint 2
+	Checkpoint 3
 */
-
 const dictionary = [
 ["T", "R", "E", "E", "H", "O", "U", "S", "E"],
   ["J","A","V","A","S","C","R","I","P","T"],
@@ -35,53 +34,56 @@ function printspaces(){
 	}
 }
 
-
-/*
-	check letter if guessed correctly
-*/
-let checkletter = function() {
+// checks if the the letter provided by the user matches one or more of the letters in the word
+let checkLetter = function(){
 	let f = document.guess_form;		// form from HTML
 	let b = f.elements["input_letter"];	// the "input_letter" element from the form
 	let letter = b.value; 				// the letter provided by the user into "input_letter" element
-	letter = letter.toUpperCase();		// turn letter to uppercase
-	// TODO: create variable to check whether letter has been found
-
+	letter = letter.toUpperCase();
+	let found = false;
 	// here, we check if the user's guessed letter is a letter in the word (chosen)
-	// TODO: for loop through chosen
-	for () {
-		// if a character matches with the guessed letter
-		// replace all matching blanks with the letter
-	}
-
 	for (let i = 0; i < chosen.length; i++){
 		if(chosen[i] === letter){
-			// TODO: found variable
-			spaces[i] = letter + " ";	// TODO: replace spaces[i] with the letter found
+			found = true;
+			spaces[i] = letter + " ";	// replace spaces[i] with the letter found
 		}
 	}
-	// TODO: empty out the input form
+	b.value = "";		// empty out text input box for next round
+	
+	// deletes the guessfield and replaces it with the new one
+	let guess_space = document.getElementById("guess_space");
+	guess_space.innerHTML=""; 
+	printspaces();
+	
+	// if a guessed letter is not in the word, the letter will be put on the "wrong letters"-list and hangman grows
+	if(!found){
+		let wrong_letters = document.getElementById("wrong_letters");	// get wrong_letters id from HTML
+		let text_node = document.createTextNode(" " + letter);	// create a text node consisting of space + letter
+		wrong_letters.appendChild(text_node);
+		count++;	// increment count of wrong letters
+		let hangman = document.getElementById("hangman");
+		// change the image src of hangman element in HTML
+    	hangman.src = "http://www.writteninpencil.de/Projekte/Hangman/hangman" + count + ".png";
+	}
 
-	let guess_space // TODO: delete the guessfield and replaces it with the new one
-	// TODO: empty out element of guess_space
-	// TODO: print spaces
+	// Now let's check whether the entire word has been guessed
+	let word_found = true
+	// TODO: for loop through the spaces to check whether there's at least a blank still left
 
-	// TODO: What do we do when we guess a letter wrong?
-	if () {	
-		let wrong_letters // TODO: get wrong_letters id from HTML
-		let text_node // TODO: create a text node consisting of space + letter to print on wrong letters
-		// TODO: append the letter text into HTML of wrong_letters
-		// TODO: increment count of wrong attempts
+	if(word_found) {
+		window.alert("You win!");
+	}
 
-		let hangman // TODO: get hangmang element from HTML
-		let image_url = "http://www.writteninpencil.de/Projekte/Hangman/hangman";
-		// TODO: change the image src of hangman element in HTML
+	// TODO: when you get through six wrong tries, you lose.
+	if() {
+		window.alert("Uh...I guess you're dead now.");
 	}
 }
+
 
 function init(){
 	printspaces();
 }
 // when window loads, run function init()
 window.onload = init;
-
 
